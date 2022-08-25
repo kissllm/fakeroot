@@ -144,7 +144,7 @@
    id_t is used everywhere, just happens to be int on some OSes */
 #ifndef _ID_T
 #define _ID_T
-typedef int id_t;
+typedef unsigned int id_t;
 #endif
 #endif
 

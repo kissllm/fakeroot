@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+export CFLAGS="$CFLAGS -isystem /usr/include/libr"
+export CXXFLAGS="$CXXFLAGS -isystem /usr/include/libr"
+
+# autoreconf -vif
+./bootstrap
+
+./configure \
+    --prefix=/usr
+
+make
+    cd doc
+    po4a -k 0 --rm-backups --variable "srcdir=../doc/" po4a/po4a.cfg
+
+doas make install
